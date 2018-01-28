@@ -1,6 +1,6 @@
 # resume
 
-> My resume powered by vue.js
+> My resume is powered by vue.js
 
 Website: [http://resume.smallcfj.club](http://resume.smallcfj.club)
 
