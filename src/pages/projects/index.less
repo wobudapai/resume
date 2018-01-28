@@ -1,0 +1,188 @@
+.projects {
+  display: flex;
+  flex-direction: column;
+
+  .pagebody {
+		position: relative;
+
+		.section {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			opacity: 0;
+			transform: translateX(100%) translateZ(0);
+			transition: all 1s ease;
+
+			.desc {
+				width: 500px;
+
+				.descTitle, .subTitle, .description, .link {
+					color: #FFF;
+					text-shadow: 0 2px 2px rgba(0,0,0,.3);
+				}
+
+				.descTitle {
+					font-size: 35px;
+					line-height: 60px;
+				}
+
+				.subTitle {
+					font-size: 23px;
+					line-height: 50px;
+					font-weight: normal;
+				}
+
+				.description {
+					font-size: 18px;
+					line-height: 30px;
+					text-align: justify;
+          word-break: break-all;
+				}
+
+				.link {
+					margin-top: 20px;
+					padding: 10px 0;
+					width: 300px;
+					font-size: 18px;
+					text-decoration: none;
+					border: 1px solid #FFF;
+					border-radius: 6px;
+					transition: all 300ms ease;
+
+					svg {
+						fill: #FFF;
+					}
+
+					&:hover {
+						background: rgba(255,255,255,.2);
+					}
+				}
+			}
+
+			.mockup {
+				min-height: 400px;
+        max-height: 500px;
+				user-select: none;
+			}
+		}
+
+		.currentSection {
+			opacity: 1;
+			transform: translateX(0) translateZ(0);
+		}
+
+		.preSection {
+			transform: translateX(-100%) translateZ(0);
+		}
+
+		.prePageBtn, .nextPageBtn {
+			position: absolute;
+			bottom: 0;
+			opacity: .6;
+			cursor: pointer;
+			transition: opacity 300ms ease;
+
+			svg {
+				fill: #FFF;
+			}
+
+			&:hover {
+				opacity: 1;
+			}
+		}
+
+		.prePageBtn {
+			left: 0;
+		}
+
+		.nextPageBtn {
+			right: 0;
+		}
+	}
+}
+
+.black-font {
+	.title {
+		color: #333;
+		text-shadow: none;
+	}
+
+	.pagebody {
+		.section {
+			.desc {
+				.descTitle, .subTitle, .description, .link {
+					color: #444;
+					text-shadow: none;
+				}
+
+				.link {
+					border: 1px solid #444;
+
+					svg {
+						fill: #444;
+					}
+
+					&:hover {
+						background: rgba(0,0,0,.2);
+					}
+				}
+			}
+		}
+
+		.prePageBtn, .nextPageBtn {
+			opacity: .6;
+
+			svg {
+				fill: #444;
+			}
+
+			&:hover {
+				opacity: 1;
+			}
+		}
+	}
+}
+
+/* adapt mobile browser */
+@media (max-width: 430px) {
+  .projects {
+    .pagebody {
+			.section {
+				flex-direction: column-reverse !important;
+				justify-content: flex-end;
+
+				.desc {
+					width: 100%;
+
+					.descTitle {
+						font-size: 28px;
+						line-height: 50px;
+					}
+
+					.subTitle {
+						font-size: 18px;
+						line-height: 30px;
+					}
+
+					.description {
+						font-size: 12px;
+						line-height: 20px;
+					}
+				}
+
+				.link {
+					margin: 20px auto;
+				}
+
+				.mockup {
+          min-height: 200px;
+          max-height: 200px;
+					height: 200px;
+					user-select: none;
+				}
+			}
+		}
+	}
+}

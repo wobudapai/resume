@@ -1,0 +1,78 @@
+.skills {
+  background: #FF5F6D;
+  background: linear-gradient(to left, #FF5F6D, #FFC371);
+
+  display: flex;
+  flex-direction: column;
+
+  .pagebody {
+    justify-content: flex-start;
+    .skillsContent {
+      margin-top: 40px;
+      padding: 20px;
+      width: 80%;
+      background: #FFF;
+      border-radius: 4px;
+      box-shadow: 0 5px 5px rgba(0,0,0,.1);
+
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+
+      .progressBar {
+        width: 100%;
+        .progressTitle{
+          font-size: 16px;
+          font-weight: 700;
+          color: #333;
+          margin: 0 0 10px;
+        }
+        .progressContent {
+          height: 15px;
+          background: #333;
+          border-radius: 0;
+          box-shadow: none;
+          margin-bottom: 20px;
+          overflow: visible;
+          .bar{
+            position: relative;
+            height: 15px;
+            transition: all 1s ease-out;
+            &:after{
+              content: "";
+              display: inline-block;
+              width: 10px;
+              background: #fff;
+              position: absolute;
+              top: -10px;
+              bottom: -10px;
+              right: -3px;
+              z-index: 1;
+              transform: rotate(35deg);
+            }
+          }
+          .progressValue{
+            display: block;
+            font-size: 16px;
+            font-weight: 600;
+            color: #333;
+            position: absolute;
+            top: -30px;
+            right: -25px;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* adapt mobile browser */
+@media (max-width: 430px) {
+  .skills {
+    .pagebody {
+      .skillsContent {
+        width: 100%;
+      }
+    }
+  }
+}
