@@ -27,7 +27,7 @@
           <p class="description">
             {{ $store.state.data.website.projects[project].desc }}
           </p>
-          <a class="flexRow allCenter link" target="_blank"
+          <out-link class="flexRow allCenter link" target="_blank"
             v-if="$store.state.data.website.projects[project].link"
             :href="$store.state.data.website.projects[project].link">
             <svg viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24">
@@ -36,7 +36,7 @@
                 <path d="M292.288 867a133.672 133.672 0 0 1-95.264-39.56c-52.536-52.688-52.536-138.44 0-191.128l100.92-101.184a133.456 133.456 0 0 1 95.104-39.456c7.128 0 14.224 0.56 21.248 1.68l-76.152 76.136a10.84 10.84 0 0 0-0.672 0.528L236.152 675.64c-30.928 31.016-30.928 81.472 0 112.472a78.792 78.792 0 0 0 56.136 23.312 78.696 78.696 0 0 0 56.112-23.312l100.92-101.168c0.656-0.656 1.24-1.392 1.8-2.128l75.056-75.144c6.608 42.392-7.216 86-37.688 116.592l-100.96 101.176a133.6 133.6 0 0 1-95.24 39.56z"></path>
               </svg>
             <span>{{ $store.state.data.website.projects[project].linkRefer }}</span>
-          </a>
+          </out-link>
         </div>
         <img class="mockup" :src="$store.state.data.website.projects[project].mainImage">
       </section>
@@ -57,8 +57,12 @@
 </template>
 
 <script>
+  import outLink from '../../components/outLink.vue'
 export default {
   name: 'projects',
+  components: {
+    outLink
+  },
   props: ['id', 'show'],
   data: () => ({
     sections: [],
