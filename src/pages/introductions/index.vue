@@ -6,7 +6,7 @@
         <p>{{ $store.state.data.website.description }}</p>
       </div>
       <div class="selfInformations">
-        <div class="infoRow" v-for="index in Array(Math.ceil($store.state.data.website.infomations.length / 3)).fill(0).map((v, i) => i)">
+        <div class="infoRow" v-for="index in infoRows">
           <div class="placeholder"></div>
           <div
             class="infoItem"
@@ -33,7 +33,18 @@
 <script>
 export default {
   name: 'introductions',
-  props: ['id']
+  props: ['id'],
+  computed: {
+    infoRows: function () {
+      //return Array(Math.ceil(this.$store.state.data.website.infomations.length / 3)).fill(0).map((v, i) => i)
+      const arr = Array()
+      for (let i = 0; i < Math.ceil(this.$store.state.data.website.infomations.length / 3); i++) {
+        arr.push(i)
+      }
+      console.log(arr)
+      return arr
+    }
+  }
 }
 </script>
 
